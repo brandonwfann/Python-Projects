@@ -1,0 +1,85 @@
+'''
+Project 1 - Turtle Art - Spring 2022
+Author: Brandon Fann brandonwfann
+
+This program uses turtle graphics to generate a drawing of describe your drawing here.
+
+I have neither given or received unauthorized assistance on this assignment.
+Signed:  Brandon Fann
+'''
+import turtle
+
+#setting up the window for the turtle to be displayed in
+turtle.setup(700, 650)
+turtle.title('Project 1 - Turtle Art - Brandon Fann')
+
+#change speed to 0 for instant drawing of the image
+turtle.speed(0)
+#changing the width of the turtle to 18 and drawing the north border
+turtle.color('maroon')
+turtle.penup()
+turtle.goto(-340,315)
+turtle.pensize(18)
+turtle.pendown()
+turtle.forward(670)
+#drawing the east border
+turtle.right(90)
+turtle.forward(622)
+#drawing the south border
+turtle.right(90)
+turtle.forward(669)
+#drawing the west border
+turtle.right(90)
+turtle.forward(675)
+
+#creating a circle to be the head of my self-portrait
+turtle.color('black')
+turtle.pensize(6)
+turtle.penup()
+turtle.goto(250,0)
+turtle.pendown()
+turtle.circle(250)
+
+#creating a bowtie using two triangles and a circle
+#right triangle (filled)
+turtle.fillcolor('green')
+turtle.begin_fill()
+turtle.penup()
+turtle.goto(145,-150)
+turtle.setheading(160)
+turtle.pendown()
+turtle.circle(100, steps=3)
+turtle.end_fill()
+#left triangle (filled)
+turtle.begin_fill()
+turtle.penup()
+turtle.goto(-150,-150)
+turtle.setheading(202)
+turtle.pendown()
+turtle.circle(100, steps=3)
+turtle.end_fill()
+#circle (filled)
+turtle.begin_fill()
+turtle.penup()
+turtle.goto(-7,-242)
+turtle.pendown()
+turtle.circle(22)
+turtle.end_fill()
+
+#creating the eyes
+turtle.fillcolor('black')
+turtle.begin_fill()
+turtle.penup()
+turtle.goto(-110,100)
+turtle.pendown()
+turtle.circle(30)
+turtle.end_fill()
+
+turtle.begin_fill()
+turtle.penup()
+turtle.goto(80,100)
+turtle.pendown()
+turtle.circle(30)
+turtle.end_fill()
+
+turtle.done()
