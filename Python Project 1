@@ -2,7 +2,7 @@
 Project 1 - Turtle Art - Spring 2022
 Author: Brandon Fann brandonwfann
 
-This program uses turtle graphics to generate a drawing of describe your drawing here.
+This program uses turtle graphics to generate a self-portait of myself 60 years from now.
 
 I have neither given or received unauthorized assistance on this assignment.
 Signed:  Brandon Fann
@@ -30,15 +30,18 @@ turtle.right(90)
 turtle.forward(669)
 #drawing the west border
 turtle.right(90)
-turtle.forward(675)
+turtle.forward(623)
 
 #creating a circle to be the head of my self-portrait
 turtle.color('black')
 turtle.pensize(6)
+turtle.fillcolor('lemonchiffon')
+turtle.begin_fill()
 turtle.penup()
 turtle.goto(250,0)
 turtle.pendown()
 turtle.circle(250)
+turtle.end_fill()
 
 #creating a bowtie using two triangles and a circle
 #right triangle (filled)
@@ -81,5 +84,42 @@ turtle.goto(80,100)
 turtle.pendown()
 turtle.circle(30)
 turtle.end_fill()
+
+#creating the nose
+turtle.pensize(10)
+turtle.penup()
+turtle.goto(0,0)
+turtle.pendown()
+turtle.setheading(240)
+turtle.forward(80)
+turtle.setheading(0)
+turtle.forward(40)
+
+#creating the mouth
+turtle.penup()
+turtle.goto(-88,-118)
+turtle.pendown()
+turtle.setheading(273)
+turtle.circle(90, extent = 170)
+
+#creating a star
+turtle.pensize(2)
+turtle.penup()
+turtle.goto(-275,180)
+turtle.pendown()
+#this loop uses 5 forward lines to make a star
+for i in range(5):
+    turtle.forward(65)
+    turtle.right(144)
+
+#creating a second star
+turtle.pensize(2)
+turtle.penup()
+turtle.goto(250,180)
+turtle.pendown()
+#this loop uses 5 forward lines to make a star
+for i in range(5):
+    turtle.forward(65)
+    turtle.right(144)
 
 turtle.done()
