@@ -1,0 +1,61 @@
+'''
+Project 2 - Name That Triangle - Spring 2022  
+Author: Brandon Fann (brandonwfann)
+
+This program will determine and report information about everyone's
+favorite geometric shape: the triangle. Its solution will focus on
+function definitions, numeric calculations, decision making, and loops.
+
+I have neither given or received unauthorized assistance on this assignment.
+Signed:  Brandon Fann
+'''
+import math
+
+def get_side(side_num):
+    side_num = str(side_num)
+    side = int(input('Enter side length #' + side_num + ':'))
+    while side <= 0:
+        side = int(input("Please enter a value greater than 0: "))
+    return(side)
+    
+def categorize_triangle(side1, side2, side3):
+    if side1 == side2 and side2 == side3:
+        return("equilateral")
+    elif side1 != side2 and side1 != side3 and side2 != side3:
+        return("scalene")
+    else:
+        return("isosceles")
+
+def compute_area(a, b, c):
+    s = (a + b + c) / 2
+    area = math.sqrt(s*(s-a)*(s-b)*(s-c))
+    return(round(area, 3))
+
+def print_result(triangle_type, triangle_area):
+    print("")
+    print('That is an', triangle_type, 'triangle with area', triangle_area)
+    print("")
+
+def main():
+    print("Welcome to the Triangle Evaluator!")
+    print("")
+    rerun = 'y'
+    while rerun == 'y' or rerun == 'Y':
+        s1 = get_side(1)
+        s2 = get_side(2)
+        s3 = get_side(3)
+
+        t_area = compute_area(s1, s2, s3)
+        t_type = categorize_triangle(s1, s2, s3)
+        
+        print_result(t_type, t_area)
+        
+        rerun = input("Process another triangle (y or n)?")
+        
+    print("")
+    print("Thanks for using the Triangle Evaluator!")
+
+
+if __name__ == '__main__':
+    main()
+
